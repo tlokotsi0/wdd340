@@ -39,6 +39,7 @@ module.exports = {
 
 let pool
 if (process.env.NODE_ENV == "development") {
+  console.log("Connecting to host:", process.env.DATABASE_URL ? process.env.DATABASE_URL.split('@')[1] : "URL MISSING");
   pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: {
