@@ -167,3 +167,103 @@ footer {
         order: 2; 
     }
 }
+
+
+/* ********** INVENTORY CLASSIFICATION GRID ********** */
+
+/* The main container (UL) */
+#inv-display {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    list-style-type: none;
+    padding: 20px 5%; 
+    margin: 0;
+}
+
+/* Individual Car Cards */
+#inv-display li {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#inv-display li img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-bottom: 1px solid #eee;
+}
+
+/* Name and Price Container */
+.namePrice {
+    padding: 10px;
+    background-color: #f9f9f9;
+    flex-grow: 1;
+}
+
+.namePrice h2 {
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.namePrice h2 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.namePrice span {
+    font-weight: bold;
+    color: #b00; 
+}
+
+/* ********** INVENTORY MEDIA QUERIES ********** */
+
+@media screen and (min-width: 64em) {
+    #inv-display {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 20px 0; 
+    }
+}
+
+
+/* Mobile View */
+#detail-display {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+#detail-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.price-box {
+    background-color: #f4f4f4;
+    padding: 15px;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* Large Screen View */
+@media screen and (min-width: 64em) {
+    #detail-display {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    #detail-image, #detail-info {
+        flex: 1; 
+    }
+    #detail-info {
+        padding-left: 40px;
+    }
+}
