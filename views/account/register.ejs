@@ -1,0 +1,44 @@
+<main class="login-view"> <h1><%= title %></h1>
+
+    <%- messages() %>
+
+    <div class="form-container">
+        <form action="/account/register" method="post">
+            <fieldset>
+                <label for="account_firstname">First Name</label>
+                <input type="text" name="account_firstname" id="account_firstname" required placeholder="Enter first name">
+
+                <label for="account_lastname">Last Name</label>
+                <input type="text" name="account_lastname" id="account_lastname" required placeholder="Enter last name">
+
+                <label for="account_email">Email Address</label>
+                <input type="email" name="account_email" id="account_email" required placeholder="Enter a valid email address">
+
+                <label for="account_password">Password</label>
+                <span class="password-hint">Passwords must be at least 5 characters</span>
+
+                <div class="password-wrapper">
+                    <input type="password" name="account_password" id="account_password" required pattern=".{5,}">
+                    <button type="button" id="psswdBtn">Show Password</button>
+                </div>
+
+                <button type="submit" class="login-btn">Register</button>
+            </fieldset>
+        </form>
+    </div>
+</main>
+
+<script>
+    const psswdBtn = document.querySelector("#psswdBtn");
+    psswdBtn.addEventListener("click", function() {
+        const psswdInput = document.getElementById("account_password");
+        const type = psswdInput.getAttribute("type");
+        if (type === "password") {
+            psswdInput.setAttribute("type", "text");
+            psswdBtn.textContent = "Hide Password";
+        } else {
+            psswdInput.setAttribute("type", "password");
+            psswdBtn.textContent = "Show Password";
+        }
+    });
+</script>

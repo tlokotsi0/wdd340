@@ -231,7 +231,6 @@ footer {
     }
 }
 
-
 /* Mobile View */
 #detail-display {
     display: flex;
@@ -266,4 +265,92 @@ footer {
     #detail-info {
         padding-left: 40px;
     }
+}
+
+/* Login View Styles */
+.login-view {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.form-container {
+    background-color: #34495e; 
+    color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.form-container fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.form-container input {
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.password-hint {
+    display: block;
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+    color: #ecf0f1;
+}
+
+.login-btn {
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    background-color: #ffffff;
+    color: #34495e;
+    border: none;
+    border-radius: 20px; 
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.signup-link a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 110px;
+    box-sizing: border-box;
+}
+
+#psswdBtn {
+    position: absolute;
+    right: 5px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 5px 8px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #333;
+    top: 50%;
+    transform: translateY(-50%);
 }

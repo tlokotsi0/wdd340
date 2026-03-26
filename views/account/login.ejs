@@ -1,0 +1,22 @@
+<main class="login-view">
+    <h1><%= title %></h1>
+
+    <%- messages() %>
+
+    <div class="form-container">
+        <form action="/account/login" method="post">
+            <fieldset>
+                <label for="account_email">Email Address</label>
+                <input type="email" name="account_email" id="account_email" required placeholder="Enter a valid email address">
+
+                <label for="account_password">Password</label>
+                <span class="password-hint">Passwords must be at least 5 characters.</span>
+                <input type="password" name="account_password" id="account_password" required pattern=".{5,}">
+
+                <button type="submit" class="login-btn">Login</button>
+            </fieldset>
+        </form>
+
+        <p class="signup-link">No account? <a href="/account/register">Sign-up</a></p>
+    </div>
+</main>
