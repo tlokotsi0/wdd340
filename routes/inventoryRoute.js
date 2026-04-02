@@ -17,6 +17,12 @@ router.get("/", utilities.handleErrors(invController.buildManagement));
 //Route to deliver the "Add Classification" view
 router.get("/addClassification", utilities.handleErrors(invController.buildAddClassification));
 
+// Get inventory for AJAX communications
+router.get(
+  "/getInventory/:classification_id",
+  utilities.handleErrors(invController.getInventoryJSON)
+)
+
 // Route to process the new classification data
 router.post("/addClassification",
   invValidate.classificationRules(), 

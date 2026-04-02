@@ -13,4 +13,21 @@
             </li>
         </ul>
     </div>
+
+    <div class="inventory-management">
+        <h2>Manage Inventory</h2>
+        <p>Select a classification from the list to see the items belonging to that category.</p>
+        
+        <div class="filter-selection">
+            <label for="classificationList">Classification:</label>
+            <%- classificationSelect %>
+        </div>
+
+        <table id="inventoryDisplay"></table>
+
+        <noscript>
+            <p class="notice">JavaScript must be enabled to use the inventory management tools.</p>
+        </noscript>
+    </div>
+    <script src="../../js/inventory.js"></script>
 </main>

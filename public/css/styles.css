@@ -418,3 +418,57 @@ footer {
     border-color: #2e7d32; /* Matches your button green */
     box-shadow: 0 0 5px rgba(46, 125, 50, 0.2);
 }
+
+/* Inventory Management Table Styling */
+#inventoryDisplay {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#inventoryDisplay thead {
+    background-color: #333;
+    color: #fff;
+}
+
+#inventoryDisplay th, 
+#inventoryDisplay td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#inventoryDisplay tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#inventoryDisplay tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styling the Modify/Delete Links */
+#inventoryDisplay td a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0056b3;
+    transition: color 0.3s ease;
+}
+
+#inventoryDisplay td a:hover {
+    color: #003366;
+    text-decoration: underline;
+}
+
+/* Responsive adjustment for small screens */
+@media screen and (max-width: 600px) {
+    #inventoryDisplay {
+        font-size: 0.9rem;
+    }
+    
+    #inventoryDisplay th, 
+    #inventoryDisplay td {
+        padding: 8px 10px;
+    }
+}
