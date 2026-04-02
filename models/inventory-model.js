@@ -82,5 +82,6 @@ module.exports = {
   getClassifications, 
   getInventoryByClassificationId, 
   getInventoryById, 
-  addClassification
+  addClassification,
+  addInventory
 };

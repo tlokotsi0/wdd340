@@ -14,6 +14,7 @@ validate.classificationRules = () => {
 }
 
 validate.checkId = async (req, res, next) => {
+  const { classification_name } = req.body
   const errors = validationResult(req)
   if (!errors.isEmpty()) {
     let nav = await utilities.getNav()
