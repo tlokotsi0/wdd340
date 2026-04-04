@@ -55,5 +55,11 @@ router.post(
   utilities.handleErrors(invController.updateInventory)
 );
 
+// Delivery of the delete confirmation view
+router.get("/delete/:inv_id", utilities.handleErrors(invController.buildDeleteView));
+
+// Process the deletion
+router.post("/delete", utilities.handleErrors(invController.deleteItem));
+
 
 module.exports = router;

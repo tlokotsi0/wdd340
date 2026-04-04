@@ -1,0 +1,38 @@
+<div class="delete-container">
+  <h1><%= title %></h1>
+  <%- messages() %>
+
+  <% if (errors) { %>
+    <ul class="notice">
+      <% errors.array().forEach(error => { %>
+        <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <div class="form-container">
+      <p class="warning-text">
+        <strong>Confirm Deletion:</strong> The delete is permanent and cannot be undone.
+      </p>
+
+      <form id="deleteForm" action="/inv/delete" method="post">
+          <fieldset>
+              <label for="inv_make">Make</label>
+              <input type="text" name="inv_make" id="inv_make" readonly value="<%= locals.inv_make %>">
+
+              <label for="inv_model">Model</label>
+              <input type="text" name="inv_model" id="inv_model" readonly value="<%= locals.inv_model %>">
+
+              <label for="inv_year">Year</label>
+              <input type="text" name="inv_year" id="inv_year" readonly value="<%= locals.inv_year %>">
+
+              <label for="inv_price">Price</label>
+              <input type="text" name="inv_price" id="inv_price" readonly value="<%= locals.inv_price %>">
+
+              <button type="submit" class="btn-submit" class="btn-delete">Delete Vehicle</button>
+      
+              <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%= locals.inv_id %>" <% } %>>
+          </fieldset>
+      </form>
+  </div>
+</div>
