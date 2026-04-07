@@ -62,4 +62,33 @@ router.get("/delete/:inv_id", utilities.handleErrors(invController.buildDeleteVi
 router.post("/delete", utilities.handleErrors(invController.deleteItem));
 
 
+// Management view (Only for Employee/Admin)
+router.get("/", 
+  utilities.checkJWTToken, // 1. Verify identity
+  utilities.checkAccountType, // 2. Verify permission
+  utilities.handleErrors(invController.buildManagement)
+)
+
+// Add Classification (Only for Employee/Admin)
+router.get("/add-classification", 
+  utilities.checkJWTToken, 
+  utilities.checkAccountType, 
+  utilities.handleErrors(invController.buildAddClassification)
+)
+
+// Add Inventory (Only for Employee/Admin)
+router.get("/add-inventory", 
+  utilities.checkJWTToken, 
+  utilities.checkAccountType, 
+  utilities.handleErrors(invController.buildAddInventory)
+)
+
+// Update/Delete routes follow the same pattern...
+router.get("/edit/:inv_id", 
+  utilities.checkJWTToken, 
+  utilities.checkAccountType, 
+  utilities.handleErrors(invController.editInventoryView)
+)
+
+
 module.exports = router;

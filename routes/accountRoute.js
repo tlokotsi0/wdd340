@@ -29,4 +29,26 @@ router.post(
 // Default route for the account management view
 router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildManagement));
 
+// Deliver Update View
+router.get("/update/:account_id", utilities.handleErrors(accountController.buildAccountUpdateView));
+
+// Process Account Info Update
+router.post(
+  "/update-info",
+  regValidate.updateAccountRules(),
+  regValidate.checkUpdateData,
+  utilities.handleErrors(accountController.updateAccountInfo)
+);
+
+// Process Password Update
+router.post(
+  "/update-password",
+  regValidate.passwordRules(),
+  regValidate.checkPasswordData,
+  utilities.handleErrors(accountController.updatePassword)
+);
+
+// Logout route
+router.get("/logout", utilities.handleErrors(accountController.accountLogout))
+
 module.exports = router;
