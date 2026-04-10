@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Customer</th>
+      <th>Vehicle</th>
+      <th>Subject</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% allInquiries.forEach(inq => { %>
+      <tr>
+        <td><%= new Date(inq.inquiry_date).toLocaleDateString() %></td>
+        <td><%= inq.account_firstname %> (<%= inq.account_email %>)</td>
+        <td><%= inq.inv_make %> <%= inq.inv_model %></td>
+        <td><%= inq.inquiry_subject %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

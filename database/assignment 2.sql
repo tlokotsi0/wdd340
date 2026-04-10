@@ -271,5 +271,22 @@ SET
 	inv_image = REPLACE(inv_image, '/images/', '/images/vehicles/'),
 	inv_thumbnail = REPLACE(inv_thumbnail, '/images/', '/images/vehicles/');
 	
-	
+-- Create the inquiry table
+CREATE TABLE IF NOT EXISTS public.inquiry (
+    inquiry_id SERIAL PRIMARY KEY,
+    inquiry_subject VARCHAR(100) NOT NULL,
+    inquiry_message TEXT NOT NULL,
+    inquiry_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    inv_id INT NOT NULL,
+    account_id INT NOT NULL,
+    -- Foreign Key Constraints ensure data integrity
+    CONSTRAINT fk_inventory 
+        FOREIGN KEY (inv_id) 
+        REFERENCES public.inventory (inv_id) 
+        ON DELETE CASCADE,
+    CONSTRAINT fk_account 
+        FOREIGN KEY (account_id) 
+        REFERENCES public.account (account_id) 
+        ON DELETE CASCADE
+);	
 

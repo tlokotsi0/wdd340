@@ -2,4 +2,24 @@
   <h1><%= title %></h1>
   <%# messages() %>
   <%- grid %>
+
+  <% if (locals.loggedin) { %>
+    <section class="inquiry-form">
+      <h3>Inquire About This <%= data.inv_make %></h3> 
+      
+      <form action="/inquiry/send" method="post">
+        <label for="inquiry_subject">Subject</label>
+        <input type="text" name="inquiry_subject" id="inquiry_subject" 
+               value="Interested in <%= data.inv_make %> <%= data.inv_model %>" required>
+      
+        <label for="inquiry_message">Message</label>
+        <textarea name="inquiry_message" id="inquiry_message" placeholder="Ask us a question..." required></textarea>
+      
+        <input type="hidden" name="inv_id" value="<%= data.inv_id %>">
+        <input type="hidden" name="account_id" value="<%= locals.accountData.account_id %>">
+      
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  <% } %>
 </main>

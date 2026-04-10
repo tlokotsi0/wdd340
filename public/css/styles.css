@@ -472,3 +472,102 @@ footer {
         padding: 8px 10px;
     }
 }
+
+/* Inquiry Section Container */
+.inquiry-form {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 0;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.inquiry-form h3 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #34495e; /* Matches typical nav colors */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Form Layout */
+.inquiry-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inquiry-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.inquiry-form input[type="text"],
+.inquiry-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* Textarea height */
+.inquiry-form textarea {
+    min-height: 120px;
+    resize: vertical; /* Allows user to resize height only */
+}
+
+/* Submit Button */
+.inquiry-form button {
+    background-color: #34495e;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; 
+}
+
+.inquiry-form button:hover {
+    background-color: #2c3e50;
+}
+
+/* My Messages Section (Account Management) */
+.user-inquiries {
+    margin-top: 20px;
+    border-top: 2px solid #eee;
+    padding-top: 20px;
+}
+
+.inquiry-item {
+    background: #fff;
+    border-left: 4px solid #34495e;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.inquiry-item em {
+    display: block;
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+.admin-tools {
+    background-color: #f0f4f8; /* Light blue/grey tint */
+    border: 1px dashed #34495e;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.admin-tools h3 {
+    color: #2c3e50;
+    margin-top: 0;
+}

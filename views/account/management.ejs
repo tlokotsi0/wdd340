@@ -18,9 +18,26 @@
     </p>
 
     <% if (locals.accountData.account_type === "Employee" || locals.accountData.account_type === "Admin") { %>
-        <h3>Inventory Management</h3>
-        <p>
-            <a href="/inv/">Manage Inventory</a>
-        </p>
+        <section class="admin-tools">
+            <hr>
+            <h3>Administrative Tools</h3>
+            <p><a href="/inv/">Inventory Management</a></p>
+            <p><a href="/inquiry/manage">Lead Management (View All Customer Inquiries)</a></p>
+            <hr>
+        </section>
     <% } %>
+
+    <div class="user-inquiries">
+        <h3>Your Sent Inquiries</h3>
+        <% if (inquiries && inquiries.length > 0) { %>
+            <% inquiries.forEach(inq => { %>
+                <div class="inquiry-item">
+                    <strong><%= inq.inv_make %> <%= inq.inv_model %></strong>: <%= inq.inquiry_subject %> 
+                    <em>(<%= new Date(inq.inquiry_date).toLocaleDateString() %>)</em>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>You have not sent any inquiries yet.</p>
+        <% } %>
+    </div>
 </main>

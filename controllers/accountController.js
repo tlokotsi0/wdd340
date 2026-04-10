@@ -1,4 +1,5 @@
 const utilities = require("../utilities/")
+const inqModel = require("../models/inquiry-model")
 const accountModel = require("../models/account-model")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
@@ -127,14 +128,20 @@ async function accountLogin(req, res) {
  * *************************************** */
 async function buildManagement(req, res) {
   let nav = await utilities.getNav()
+  
+  // 1. Get the account ID from the session/locals
+  const account_id = res.locals.accountData.account_id
+  
+  // 2. Fetch the inquiries specifically for this user
+  const inquiryData = await inqModel.getInquiriesByAccountId(account_id)
+
   res.render("account/management", {
     title: "Account Management",
     nav,
     errors: null,
+    inquiries: inquiryData, // Passing it as 'inquiries' to match your management.ejs logic
   })
 }
-
-
 /* ****************************************
 * Deliver account update view
 * *************************************** */
@@ -226,6 +233,8 @@ async function accountLogout(req, res, next) {
   res.clearCookie("jwt")
   res.redirect("/")
 }
+
+
 
 
 module.exports = { 

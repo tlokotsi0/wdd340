@@ -12,6 +12,7 @@ const app = express()
 const static = require("./routes/static")
 const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
+const inquiryRoute = require("./routes/inquiryRoute")
 const utilities = require("./utilities/index")
 const session = require("express-session")
 const pool = require('./database/')
@@ -64,6 +65,8 @@ app.get("/", baseController.buildHome)
 // Inventory routes
 app.use("/inv", inventoryRoute)
 app.use("/account", accountRoute)
+// Inquiry route
+app.use("/inquiry", inquiryRoute)
 
 /* ***********************
  * Local Server Information
